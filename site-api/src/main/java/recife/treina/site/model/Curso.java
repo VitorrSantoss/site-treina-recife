@@ -29,6 +29,10 @@ public class Curso {
   @OneToMany
   @JoinColumn(nullable = false)
   private Usuario usuario;
+
+  @OneToMany
+  @JoinColumn(nullable = false)
+  private Turma turma;
   
   
 }
