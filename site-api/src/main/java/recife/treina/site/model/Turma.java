@@ -1,5 +1,6 @@
 package recife.treina.site.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import jakarta.persistence.Column;
@@ -14,6 +15,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import recife.treina.site.constants.TurmaStatus;
+import recife.treina.site.dto.TurmaDto;
 
 @Data
 @AllArgsConstructor
@@ -36,4 +38,17 @@ public class Turma {
   @Column(nullable = false)
   @Enumerated(EnumType.STRING)
   private TurmaStatus status;
+
+  public TurmaDto converteTurmaDto(){
+    TurmaDto dto = new TurmaDto();
+
+    dto.setId(id);
+    dto.setNumero(numero);
+    
+    LocalDate dataAtual = LocalDate.now();
+
+    dto.setVigencia(dataAtual);
+
+    return dto;
+  }
 }

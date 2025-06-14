@@ -9,6 +9,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import recife.treina.site.dto.UsuarioDto;
 
 @Data
 @AllArgsConstructor
@@ -35,5 +36,17 @@ public class Usuario {
   @NotNull(message = "OBRIGATÓRIO o preenchimento do {telefone}")
   @Column(nullable = false)
   private String telefone;
+
+  public UsuarioDto converteUserDto(){
+    UsuarioDto dto = new UsuarioDto();
+
+    dto.setId(id);
+    dto.setNome(nome);
+    dto.setEmail(email);
+    dto.setCpf(cpf);
+    dto.setTelefone(telefone);
+    
+    return dto;
+  }
 
 }

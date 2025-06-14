@@ -11,6 +11,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import recife.treina.site.dto.CursoDto;
 
 @Data
 @AllArgsConstructor
@@ -35,4 +36,13 @@ public class Curso {
   private Turma turma;
   
   
+  public CursoDto converteCursoDto(){
+    CursoDto dto = new CursoDto();
+
+    dto.setId(id);
+    dto.setNome(nome);
+
+    return dto;
+  }
+
 }
