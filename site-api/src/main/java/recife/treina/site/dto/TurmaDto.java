@@ -1,6 +1,6 @@
 package recife.treina.site.dto;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,6 +13,6 @@ public class TurmaDto {
 
   private Long id;
   private int numero;
-  private Date vigencia;
+  private LocalDate vigencia;
 
 }
